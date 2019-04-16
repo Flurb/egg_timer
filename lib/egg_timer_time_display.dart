@@ -11,13 +11,14 @@ class _EggTimerTimeDisplayState extends State<EggTimerTimeDisplay> {
     return Padding(
       padding: const EdgeInsets.only(top: 15.0),
       child: Text(
-        '25:23',
+        '15:23',
         textAlign: TextAlign.center,
         style: const TextStyle(
             color: Colors.black,
             fontFamily: 'BebasNeue',
             fontSize: 140.0,
-            fontWeight: FontWeight.bold),
+            fontWeight: FontWeight.bold,
+            letterSpacing: 5.0),
       ),
     );
   }
