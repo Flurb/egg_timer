@@ -60,6 +60,7 @@ class _MyAppState extends State<MyApp> {
                     countdownTime: eggTimer.currentTime,
                   ),
                   EggTimerDial(
+                      eggTimerState: eggTimer.state,
                       currentTime: eggTimer.currentTime,
                       maxTime: eggTimer.maxTime,
                       ticksPerSection: 5,
