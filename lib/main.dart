@@ -66,7 +66,21 @@ class _MyAppState extends State<MyApp> {
                       onTimeSelected: _onTimeSelected,
                       onDialStopTurning: _onDialStopTurning),
                   Expanded(child: Container()),
-                  EggTimerControls()
+                  EggTimerControls(
+                    eggTimerState: eggTimer.state,
+                    onPause: () {
+                      setState(() => eggTimer.pause());
+                    },
+                    onResume: () {
+                      setState(() => eggTimer.resume());
+                    },
+                    onRestart: () {
+                      setState(() => eggTimer.restart());
+                    },
+                    onReset: () {
+                      setState(() => eggTimer.reset());
+                    },
+                  )
                 ],
               ),
             ),
