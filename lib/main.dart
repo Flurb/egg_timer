@@ -19,6 +19,12 @@ class _MyAppState extends State<MyApp> {
 
   _MyAppState() : eggTimer = EggTimer(maxTime: const Duration(minutes: 35));
 
+  _onTimeSelected(Duration newTime) {
+    setState(() {
+      eggTimer.currentTime = newTime;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,10 +42,10 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   EggTimerTimeDisplay(),
                   EggTimerDial(
-                    currentTime: eggTimer.currentTime,
-                    maxTime: eggTimer.maxTime,
-                    ticksPerSection: 5,
-                  ),
+                      currentTime: eggTimer.currentTime,
+                      maxTime: eggTimer.maxTime,
+                      ticksPerSection: 5,
+                      onTimeSelected: _onTimeSelected),
                   Expanded(child: Container()),
                   EggTimerControls()
                 ],
