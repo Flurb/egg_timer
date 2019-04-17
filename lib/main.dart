@@ -54,7 +54,11 @@ class _MyAppState extends State<MyApp> {
             child: Center(
               child: Column(
                 children: [
-                  EggTimerTimeDisplay(),
+                  EggTimerTimeDisplay(
+                    eggTimerState: eggTimer.state,
+                    selectionTime: eggTimer.lastStartTime,
+                    countdownTime: eggTimer.currentTime,
+                  ),
                   EggTimerDial(
                       currentTime: eggTimer.currentTime,
                       maxTime: eggTimer.maxTime,
