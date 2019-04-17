@@ -51,8 +51,8 @@ class _EggTimerDialState extends State<EggTimerDial> {
 }
 
 class TickPainter extends CustomPainter {
-  final LONG_TICK = 14.0;
-  final SHORT_TICK = 4.0;
+  final longTick = 14.0;
+  final shortTick = 4.0;
 
   final tickCount;
   final ticksPerSection;
@@ -75,7 +75,7 @@ class TickPainter extends CustomPainter {
     final radius = size.width / 2;
 
     for (var i = 0; i < tickCount; ++i) {
-      final tickLength = i % ticksPerSection == 0 ? LONG_TICK : SHORT_TICK;
+      final tickLength = i % ticksPerSection == 0 ? longTick : shortTick;
 
       canvas.drawLine(
           Offset(0.0, -radius), Offset(0.0, -radius - tickLength), tickPaint);
