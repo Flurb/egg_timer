@@ -24,11 +24,20 @@ class EggTimer {
 
   resume() {
     if (state != EggTimerState.RUNNING) {
+      if (state == EggTimerState.READY) {
+        _currentTime = _roundToTheNearestMinute(_currentTime);
+        lastStartTime = _currentTime;
+      }
+
       state = EggTimerState.RUNNING;
       stopwatch.start();
 
       _tick();
     }
+  }
+
+  _roundToTheNearestMinute(duration) {
+    return Duration(minutes: (duration.inSeconds / 60).round());
   }
 
   pause() {
